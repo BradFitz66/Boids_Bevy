@@ -1,0 +1,31 @@
+[package]
+name = "BoidsECS"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy = { version = "0.10.0" }
+rand = "*"
+rand_distr="*"
+bevy_prototype_debug_lines = "0.10"
+diff-struct = "0.5.1"
+hash_map_diff="0.2.0"
+rayon="*"
+evmap="*"
+chashmap="*"
+perlin_noise="*"
+dashmap={version="5.4.0", rayon=true}
+
+
+[toolchain]
+channel = "nightly"
+
+[features]
+parallel_gather=[] # Parallelize gathering neighbors for boids
+parallel_flocking=[] # Parallelize boid flocking
+
+[profile.dev]
+opt-level = 3
+
